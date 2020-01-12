@@ -45,6 +45,14 @@ namespace GoogleMobileAds.Android
         public const string PlayStorePurchaseListenerClassName =
             "com.google.android.gms.ads.purchase.PlayStorePurchaseListener";
 
+        public const string MobileAdsClassName = "com.google.android.gms.ads.MobileAds";
+
+        public const string ServerSideVerificationOptionsClassName =
+            "com.google.android.gms.ads.rewarded.ServerSideVerificationOptions";
+
+        public const string ServerSideVerificationOptionsBuilderClassName =
+            "com.google.android.gms.ads.rewarded.ServerSideVerificationOptions$Builder";
+
         #endregion
 
         #region Google Mobile Ads Unity Plugin class names
@@ -55,7 +63,7 @@ namespace GoogleMobileAds.Android
 
         public const string RewardBasedVideoClassName = "com.google.unity.ads.RewardBasedVideo";
 
-        public const string NativeExpressAdViewClassName = "com.google.unity.ads.NativeExpressAd";
+        public const string UnityRewardedAdClassName = "com.google.unity.ads.UnityRewardedAd";
 
         public const string NativeAdLoaderClassName = "com.google.unity.ads.NativeAdLoader";
 
@@ -63,6 +71,15 @@ namespace GoogleMobileAds.Android
 
         public const string UnityRewardBasedVideoAdListenerClassName =
             "com.google.unity.ads.UnityRewardBasedVideoAdListener";
+
+        public const string UnityRewardedAdCallbackClassName =
+            "com.google.unity.ads.UnityRewardedAdCallback";
+
+        public const string UnityAdapterStatusEnumName =
+                "com.google.android.gms.ads.initialization.AdapterStatus$State";
+
+        public const string OnInitializationCompleteListenerClassName =
+            "com.google.android.gms.ads.initialization.OnInitializationCompleteListener";
 
         public const string UnityAdLoaderListenerClassName =
             "com.google.unity.ads.UnityAdLoaderListener";
@@ -90,15 +107,38 @@ namespace GoogleMobileAds.Android
 
         public static AndroidJavaObject GetAdSizeJavaObject(AdSize adSize)
         {
-            if (adSize.IsSmartBanner)
-            {
-                return new AndroidJavaClass(AdSizeClassName)
-                        .GetStatic<AndroidJavaObject>("SMART_BANNER");
-            }
-            else
-            {
-                return new AndroidJavaObject(AdSizeClassName, adSize.Width, adSize.Height);
-            }
+            switch (adSize.AdType) {
+                case AdSize.Type.SmartBanner:
+  #if UNITY_2019_2_OR_NEWER
+                    // AndroidJavaClass.GetStatic<AndroidJavaObject>() returns null since Unity 2019.2.
+                    // Creates an AdSize object by directly calling the constructor, as a workaround.
+                    return new AndroidJavaObject(AdSizeClassName, -1, -2)
+                            .GetStatic<AndroidJavaObject>("SMART_BANNER");
+  #else
+                    return new AndroidJavaClass(AdSizeClassName)
+                            .GetStatic<AndroidJavaObject>("SMART_BANNER");
+  #endif
+                case AdSize.Type.AnchoredAdaptive:
+                    AndroidJavaClass adSizeClass = new AndroidJavaClass(AdSizeClassName);
+                    AndroidJavaClass playerClass = new AndroidJavaClass(Utils.UnityActivityClassName);
+                    AndroidJavaObject activity =
+                        playerClass.GetStatic<AndroidJavaObject>("currentActivity");
+                    switch (adSize.Orientation)
+                    {
+                        case Orientation.Landscape:
+                            return adSizeClass.CallStatic<AndroidJavaObject>("getLandscapeBannerAdSizeWithWidth", activity, adSize.Width);
+                        case Orientation.Portrait:
+                            return adSizeClass.CallStatic<AndroidJavaObject>("getPortaitBannerAdSizeWithWidth", activity, adSize.Width);
+                        case Orientation.Current:
+                            return adSizeClass.CallStatic<AndroidJavaObject>("getCurrentOrientationBannerAdSizeWithWidth", activity, adSize.Width);
+                        default:
+                            throw new ArgumentException("Invalid Orientation provided for ad size.");
+                    }
+                case AdSize.Type.Standard:
+                    return new AndroidJavaObject(AdSizeClassName, adSize.Width, adSize.Height);
+                default:
+                    throw new ArgumentException("Invalid AdSize.Type provided for ad size.");
+  }
         }
 
         public static AndroidJavaObject GetAdRequestJavaObject(AdRequest request)
@@ -136,15 +176,15 @@ namespace GoogleMobileAds.Android
                 int? genderCode = null;
                 switch (request.Gender.GetValueOrDefault())
                 {
-                    case Gender.Unknown:
+                    case Api.Gender.Unknown:
                         genderCode = new AndroidJavaClass(AdRequestClassName)
                                 .GetStatic<int>("GENDER_UNKNOWN");
                         break;
-                    case Gender.Male:
+                    case Api.Gender.Male:
                         genderCode = new AndroidJavaClass(AdRequestClassName)
                                 .GetStatic<int>("GENDER_MALE");
                         break;
-                    case Gender.Female:
+                    case Api.Gender.Female:
                         genderCode = new AndroidJavaClass(AdRequestClassName)
                                 .GetStatic<int>("GENDER_FEMALE");
                         break;
@@ -173,6 +213,8 @@ namespace GoogleMobileAds.Android
                 bundle.Call("putString", entry.Key, entry.Value);
             }
 
+            bundle.Call("putString", "is_unity", "1");
+
             AndroidJavaObject extras = new AndroidJavaObject(AdMobExtrasClassName, bundle);
             adRequestBuilder.Call<AndroidJavaObject>("addNetworkExtras", extras);
 
@@ -184,21 +226,37 @@ namespace GoogleMobileAds.Android
 
                 foreach (KeyValuePair<string, string> entry in mediationExtra.Extras)
                 {
-                    map.Call<string>("put", entry.Key, entry.Value);
+                    map.Call<AndroidJavaObject>("put", entry.Key, entry.Value);
                 }
 
                 AndroidJavaObject mediationExtras =
                         mediationExtrasBundleBuilder.Call<AndroidJavaObject>("buildExtras", map);
 
-                adRequestBuilder.Call<AndroidJavaObject>(
+                if (mediationExtras != null)
+                {
+                    adRequestBuilder.Call<AndroidJavaObject>(
                         "addNetworkExtrasBundle",
                         mediationExtrasBundleBuilder.Call<AndroidJavaClass>("getAdapterClass"),
                         mediationExtras);
+
+                    adRequestBuilder.Call<AndroidJavaObject>(
+                        "addCustomEventExtrasBundle",
+                        mediationExtrasBundleBuilder.Call<AndroidJavaClass>("getAdapterClass"),
+                        mediationExtras);
+                }
             }
 
             return adRequestBuilder.Call<AndroidJavaObject>("build");
         }
 
+        public static AndroidJavaObject GetServerSideVerificationOptionsJavaObject(ServerSideVerificationOptions serverSideVerificationOptions)
+        {
+            AndroidJavaObject serverSideVerificationOptionsBuilder = new AndroidJavaObject(ServerSideVerificationOptionsBuilderClassName);
+            serverSideVerificationOptionsBuilder.Call<AndroidJavaObject>("setUserId", serverSideVerificationOptions.UserId);
+            serverSideVerificationOptionsBuilder.Call<AndroidJavaObject>("setCustomData", serverSideVerificationOptions.CustomData);
+
+            return serverSideVerificationOptionsBuilder.Call<AndroidJavaObject>("build");
+        }
         #endregion
     }
 }

@@ -1,5 +1,5 @@
-lastUpgrade=00938a
-proj.pluginVersion=0.9.38a
+lastUpgrade=01006
+proj.pluginVersion=0.10.06
 proj.AppId=75263987890
 proj.classDir=Assets
 proj.ConstantsClassName=ElkhanResources

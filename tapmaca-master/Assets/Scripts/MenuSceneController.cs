@@ -15,6 +15,7 @@ public class MenuSceneController : MonoBehaviour {
     public Sprite forMusicButtonOff;
    public  Button musicButton;
     private static int isOn = 1;
+    
     private void Start()
     {
 		
@@ -28,12 +29,23 @@ public class MenuSceneController : MonoBehaviour {
                 if (PlayerPrefs.GetInt("Music") == 0)
                 {
                     musicButton.image.sprite = forMusicButtonOff;
+                    AudioManager.playingSound = false;
+
                 }
                 else
                 {
-                    musicButton.image.sprite = forMusicButtonOn;
+                    if (AudioManager.playingSound)
+                    {
+                        audio.GetComponent<AudioSource>().Play();
+                        AudioManager.playingSound = false;
+                        musicButton.image.sprite = forMusicButtonOn;
+                    }
                 }
             }
+        }
+        else
+        {
+            audio.GetComponent<AudioSource>().Play();
         }
       
     }
@@ -78,7 +90,13 @@ public class MenuSceneController : MonoBehaviour {
         {
             if (PlayerPrefs.GetInt("Music") == 0)
             {
-                audio.GetComponent<AudioSource>().UnPause();
+                if (!AudioManager.playingSound)
+                {
+                    audio.GetComponent<AudioSource>().Play();
+                }
+                else {
+                    audio.GetComponent<AudioSource>().UnPause();
+                }
                 musicButton.image.sprite = forMusicButtonOn; 
                 PlayerPrefs.SetInt("Music", 1);
             }

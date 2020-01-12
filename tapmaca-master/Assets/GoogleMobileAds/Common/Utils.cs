@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -21,6 +22,17 @@ namespace GoogleMobileAds.Common
 {
     internal class Utils
     {
+        public static void CheckInitialization()
+        {
+            if (!MobileAdsEventExecutor.IsActive())
+            {
+                Debug.Log("You intitialized an ad object but have not yet called MobileAds.Initialize(). We " +
+                    "highly recommend you call MobileAds.Initialize() before interacting with the Google " +
+                    "Mobile Ads SDK.");
+            }
+            MobileAdsEventExecutor.Initialize();
+        }
+
         public static Texture2D GetTexture2DFromByteArray(byte[] img)
         {
             // Create a texture. Texture size does not matter, since
@@ -34,6 +46,5 @@ namespace GoogleMobileAds.Common
 
             return nativeAdTexture;
         }
-
     }
 }

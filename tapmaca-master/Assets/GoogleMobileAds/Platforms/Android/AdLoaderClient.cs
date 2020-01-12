@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2015 Google, Inc.
+// Copyright (C) 2015 Google, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -43,13 +43,19 @@ namespace GoogleMobileAds.Android
 
             this.CustomNativeTemplateCallbacks = unityAdLoader.CustomNativeTemplateClickHandlers;
 
+            bool supportsRequestImageAssetUrls = false;
+
             if (unityAdLoader.AdTypes.Contains(NativeAdType.CustomTemplate))
             {
+                supportsRequestImageAssetUrls = false;
                 foreach (string templateId in unityAdLoader.TemplateIds)
                 {
                     adLoader.Call("configureCustomNativeTemplateAd", templateId,
                         this.CustomNativeTemplateCallbacks.ContainsKey(templateId));
                 }
+            }
+            if (supportsRequestImageAssetUrls) {
+                adLoader.Call("configureReturnUrlsForImageAssets");
             }
             adLoader.Call("create");
         }

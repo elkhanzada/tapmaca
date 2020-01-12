@@ -8,7 +8,7 @@ public class AdManager : MonoBehaviour
     public static AdManager Instance { set; get; }
     public string bannerId = "";
     public string videoId;
-    InterstitialAd interstital;
+    private InterstitialAd interstital;
     private void Start()
     {
         Instance = this;
@@ -21,12 +21,12 @@ public class AdManager : MonoBehaviour
 
     }
     public void RequestInterstitial(){
-		#if UNITY_EDITOR
-		#elif UNITY_ANDROID
+#if UNITY_EDITOR
+#elif UNITY_ANDROID
 		interstital = new InterstitialAd(videoId);
 		AdRequest request = new AdRequest.Builder().Build();
         interstital.LoadAd(request);
-		#endif
+#endif
     }
 
     public void ShowVideo()

@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour {
         currentRoundData = dataController.GetCurrentRoundData(MenuSceneController.questionSelected);
         if (MenuSceneController.questionSelected == 0)
         {
-            forStories = 100;
+            forStories = currentRoundData.questions.Length;
         }
         else
         {
@@ -214,8 +214,15 @@ public class GameController : MonoBehaviour {
         {
             if (PlayerPrefs.GetInt("Music") == 0)
             {
-                audio.GetComponent<AudioSource>().UnPause();
-                
+                if (!AudioManager.playingSound)
+                {
+                    audio.GetComponent<AudioSource>().Play();
+                    AudioManager.playingSound = false;
+                }
+                else
+                {
+                    audio.GetComponent<AudioSource>().UnPause();
+                }
                 PlayerPrefs.SetInt("Music", 1);
                 musicButton.image.sprite = forMusicButtonOn;
             }

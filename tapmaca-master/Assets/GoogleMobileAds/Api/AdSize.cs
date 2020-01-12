@@ -12,9 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace GoogleMobileAds.Api {
-    public class AdSize {
-        private bool isSmartBanner;
+namespace GoogleMobileAds.Api
+{
+
+    internal enum Orientation {
+        Current = 0,
+        Landscape = 1,
+        Portrait = 2
+    }
+
+    public class AdSize
+    {
+        public enum Type {
+            Standard = 0,
+            SmartBanner = 1,
+            AnchoredAdaptive = 2
+        }
+        private Type type;
+        private Orientation orientation;
         private int width;
         private int height;
 
@@ -22,18 +37,39 @@ namespace GoogleMobileAds.Api {
         public static readonly AdSize MediumRectangle = new AdSize(300, 250);
         public static readonly AdSize IABBanner = new AdSize(468, 60);
         public static readonly AdSize Leaderboard = new AdSize(728, 90);
-        public static readonly AdSize SmartBanner = new AdSize(true);
+        public static readonly AdSize SmartBanner = new AdSize(0, 0, Type.SmartBanner);
+        public static readonly int FullWidth = -1;
 
-        public AdSize(int width, int height) {
-            isSmartBanner = false;
+        public AdSize(int width, int height)
+        {
+            this.type = Type.Standard;
             this.width = width;
             this.height = height;
+            this.orientation = Orientation.Current;
         }
 
-        private AdSize(bool isSmartBanner) {
-            this.isSmartBanner = isSmartBanner;
-            this.width = 0;
-            this.height = 0;
+        private AdSize(int width, int height, Type type) : this(width, height)
+        {
+            this.type = type;
+        }
+
+        private static AdSize CreateAnchoredAdaptiveAdSize(int width, Orientation orientation)
+        {
+            AdSize adSize = new AdSize(width, 0, Type.AnchoredAdaptive);
+            adSize.orientation = orientation;
+            return adSize;
+        }
+
+        public static AdSize GetLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(int width) {
+          return CreateAnchoredAdaptiveAdSize(width, Orientation.Landscape);
+        }
+
+        public static AdSize GetPortraitAnchoredAdaptiveBannerAdSizeWithWidth(int width) {
+            return CreateAnchoredAdaptiveAdSize(width, Orientation.Portrait);
+        }
+
+        public static AdSize GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(int width) {
+            return CreateAnchoredAdaptiveAdSize(width, Orientation.Current);
         }
 
         public int Width
@@ -52,12 +88,53 @@ namespace GoogleMobileAds.Api {
             }
         }
 
-        public bool IsSmartBanner
+        public Type AdType
         {
             get
             {
-                return isSmartBanner;
+                return type;
             }
+        }
+
+        internal Orientation Orientation
+        {
+            get
+            {
+              return orientation;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            AdSize other = (AdSize)obj;
+            return (width == other.width) && (height == other.height)
+            && (type == other.type) && (orientation == other.orientation);
+        }
+
+        public static bool operator ==(AdSize a, AdSize b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(AdSize a, AdSize b)
+        {
+            return !a.Equals(b);
+        }
+
+        public override int GetHashCode()
+        {
+            int hashBase = 71;
+            int hashMultiplier = 11;
+
+            int hash = hashBase;
+            hash = (hash * hashMultiplier) ^ width.GetHashCode();
+            hash = (hash * hashMultiplier) ^ height.GetHashCode();
+            hash = (hash * hashMultiplier) ^ type.GetHashCode();
+            hash = (hash * hashMultiplier) ^ orientation.GetHashCode();
+            return hash;
         }
     }
 }
