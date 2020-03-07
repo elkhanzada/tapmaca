@@ -38,9 +38,9 @@ public class DataController : MonoBehaviour {
         }
         SceneManager.LoadScene("MenuScene");
         LoadPlayerProgress();
-        StartService();
-     
+        // StartService();
 	}
+    
     public RoundData GetCurrentRoundData(int index)
     {
         return allRoundData[index];

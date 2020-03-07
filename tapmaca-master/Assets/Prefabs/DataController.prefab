@@ -2547,139 +2547,536 @@ MonoBehaviour:
       - answerText: "D\xFCy\xFC"
         isCorrect: 0
     - questionText: "Q\u0131rm\u0131z\u0131 toyuq ba\u011Fda,NEWLINEDimdiyi var torpaqda."
-      answers: []
+      answers:
+      - answerText: Turp
+        isCorrect: 1
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: "Bib\u0259r"
+        isCorrect: 0
+      - answerText: Limon
+        isCorrect: 0
     - questionText: "Qutu-qutu i\xE7ind\u0259,NEWLINEQutunun lap i\xE7ind\u0259,NEWLINEG\xF6z\u0259l
         bir \u0259l yayl\u0131\u011F\u0131 (n\u0259n\u0259min \u0259l yayl\u0131\u011F\u0131),NEWLINEO
         da qutu i\xE7inde."
-      answers: []
+      answers:
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
+      - answerText: "K\u0259l\u0259m"
+        isCorrect: 1
+      - answerText: "So\u011Fan"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
     - questionText: "Da\u011Fdan atsan \u0259zilm\u0259z,NEWLINEBir yumru\u011Fa d\xF6z\u0259mm\u0259z."
-      answers: []
+      answers:
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 1
+      - answerText: Alma
+        isCorrect: 0
     - questionText: "Dilb\u0259r zindanda,NEWLINESa\xE7\u0131 eyvanda."
-      answers: []
+      answers:
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 1
     - questionText: "\u018Fzizim, q\u0259ssab a\u011Flar,NEWLINESar\u0131 don q\u0259ssab
         a\u011Flar.NEWLINE\xD6l\u0259n qoyun a\u011Flamaz,NEWLINE\xD6ld\xFCr\u0259n
         q\u0259ssab a\u011Flar."
-      answers: []
+      answers:
+      - answerText: "K\xF6k"
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 1
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: "Zo\u011Fal"
+        isCorrect: 0
     - questionText: "\u0130lim-ilim d\xFCym\u0259si,NEWLINE\u0130lim xat\u0131n d\xFCym\u0259si,NEWLINEH\u0259r
         k\u0259s onu tapmasa,NEWLINEOn be\u015F t\xFCm\u0259n c\u0259rm\u0259si."
-      answers: []
+      answers:
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: "\u0130stiot"
+        isCorrect: 1
+      - answerText: Qabaq
+        isCorrect: 0
+      - answerText: Balqabaq
+        isCorrect: 0
     - questionText: "I\u015F\u0131m-\u0131\u015F\u0131m \u0131\u015F\u0131ldar,NEWLINE\u0130lan
         kimi x\u0131\u015F\u0131ldar,NEWLINE\u0130lan deyil, yarpaqd\u0131,NEWLINEYatd\u0131\u011F\u0131
         yer torpaqd\u0131."
-      answers: []
+      answers:
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: "Yemi\u015F"
+        isCorrect: 0
+      - answerText: "K\u0259l\u0259m"
+        isCorrect: 1
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
     - questionText: "Ya\u015F\u0131l ta\u011F\u0131m var,NEWLINEAl ota\u011F\u0131m
         var.NEWLINEG\xF6y paltar\u0131mdaNEWLINEBoz qur\u015Fa\u011F\u0131m var."
-      answers: []
+      answers:
+      - answerText: "Sar\u0131msaq"
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 1
+      - answerText: "Boran\u0131"
+        isCorrect: 0
     - questionText: "Yer alt\u0131nda qanl\u0131 b\u0259sti."
-      answers: []
+      answers:
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: "K\xF6k"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 1
     - questionText: "Yer alt\u0131nda q\u0131ll\u0131 ba\u015F."
-      answers: []
+      answers:
+      - answerText: "Qara \u0259ncir"
+        isCorrect: 0
+      - answerText: "K\u0259l\u0259m"
+        isCorrect: 0
+      - answerText: Pomidor
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 1
     - questionText: "Yer alt\u0131nda sar\u0131 biz."
-      answers: []
+      answers:
+      - answerText: "K\xF6k"
+        isCorrect: 1
+      - answerText: Balqabaq
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: "Boran\u0131"
+        isCorrect: 0
     - questionText: "G\xF6y \xF6k\xFCz yoldan bax\u0131r."
-      answers: []
+      answers:
+      - answerText: "Qarp\u0131z"
+        isCorrect: 1
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: Qabaq
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
     - questionText: "Lalalar, ay lalalar,NEWLINELaladan piyalalar,NEWLINEQol-buda\u011F\u0131
         \xE7i\xE7\u0259kl\u0259r,NEWLINEK\xF6kl\u0259rind\u0259n balalar."
-      answers: []
+      answers:
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 1
+      - answerText: Alma
+        isCorrect: 0
     - questionText: "Lalalar, ay lalalar,NEWLINEOrtas\u0131 al, \xE7\xF6l\xFC ya\u015F\u0131l,
         lalalar,NEWLINEA\u011F\u0131ll\u0131lar a\u011F\u0131l il\u0259 taparlar,NEWLINEA\u011F\u0131ls\u0131zlar
         q\u0259m evin\u0259 batarlar."
-      answers: []
+      answers:
+      - answerText: Nar
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 1
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: "K\u0259l\u0259m"
+        isCorrect: 0
     - questionText: "L\u0259y\u0259nd\u0259, ay l\u0259y\u0259nd\u0259,NEWLINEG\xFCl
         boynunu \u0259y\u0259nd\u0259,NEWLINEYeyil\u0259r kal vaxt\u0131nda,NEWLINEYem\u0259k
         olmaz d\u0259y\u0259nd\u0259."
-      answers: []
+      answers:
+      - answerText: Xiyar
+        isCorrect: 1
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: "Yemi\u015F"
+        isCorrect: 0
+      - answerText: Nar
+        isCorrect: 0
     - questionText: "N\u0259 qap\u0131s\u0131 var, n\u0259 bacas\u0131NEWLINE\u0130\xE7i
         dolu s\u0259r\xE7\u0259 balas\u0131."
-      answers: []
+      answers:
+      - answerText: "Sar\u0131msaq"
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: Xiyar tumu
+        isCorrect: 1
     - questionText: "O n\u0259di ki, saqqal\u0131 yerd\u0259,NEWLINEAyaqlar\u0131
         g\xF6yd\u0259."
-      answers: []
+      answers:
+      - answerText: "Sar\u0131msaq"
+        isCorrect: 1
+      - answerText: Balqabaq
+        isCorrect: 0
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
     - questionText: "O n\u0259di ki,NEWLINEOtuz s\u0259kkiz paltar geyir,NEWLINEHam\u0131s\u0131
         d\xFCym\u0259siz."
-      answers: []
+      answers:
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
+      - answerText: "K\u0259l\u0259m"
+        isCorrect: 1
     - questionText: "Sand\u0131 s\u0259tlan kimi,NEWLINEAlad\u0131 q\u0259tran kimi.NEWLINEBoynu
         uzun qaz kimi,NEWLINEYumrucad\u0131r qoz kimi."
-      answers: []
+      answers:
+      - answerText: "K\xF6k"
+        isCorrect: 0
+      - answerText: "Boran\u0131"
+        isCorrect: 1
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: "Bad\u0131mcan"
+        isCorrect: 0
     - questionText: "Sar\u0131-sar\u0131 sand\u0131qlar,NEWLINE\u0130\xE7i dolu f\u0131nd\u0131qlar."
-      answers: []
+      answers:
+      - answerText: "Bad\u0131mcan"
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: Balqabaq
+        isCorrect: 1
+      - answerText: Pomidor
+        isCorrect: 0
     - questionText: "Uzundu boyuNEWLINEA\u011Fd\u0131 qan\u0131,NEWLINESudu can\u0131."
-      answers: []
+      answers:
+      - answerText: Xiyar
+        isCorrect: 1
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: "K\xF6k"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
     - questionText: "Uzun-uzun uzanar,NEWLINE\u0130pd\u0259n tutub sallanar."
-      answers: []
+      answers:
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 0
+      - answerText: "Qabaq, yemi\u015F"
+        isCorrect: 1
     - questionText: "\xDCst\xFC q\u0131rm\u0131z\u0131, i\xE7i a\u011F,NEWLINE\xC7iyi
         ac\u0131, bi\u015Fmi\u015Fi ya\u011F."
-      answers: []
+      answers:
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
+      - answerText: "Sar\u0131msaq"
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 1
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
     - questionText: "\xDCst\xFC ya\u015F\u0131l m\u0259xm\u0259rdi,NEWLINE\u0130\xE7i
         \u015Firin \u015F\u0259k\u0259rdi."
-      answers: []
+      answers:
+      - answerText: "Yemi\u015F"
+        isCorrect: 0
+      - answerText: "Bad\u0131mcan"
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 1
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
     - questionText: "Haqq ba\u011Flar bo\u011Faz\u0131n\u0131,NEWLINEB\u0259nd\u0259
         a\xE7ar a\u011Fz\u0131n\u0131."
-      answers: []
+      answers:
+      - answerText: "K\u0259l\u0259m"
+        isCorrect: 0
+      - answerText: Kartof
+        isCorrect: 0
+      - answerText: Xiyar
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 1
     - questionText: "Hallanar, hullanar,NEWLINEYa\u015F\u0131llanar, sallanar."
-      answers: []
+      answers:
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
+      - answerText: "K\xF6k, Kartof"
+        isCorrect: 0
+      - answerText: "So\u011Fan, sar\u0131msaq"
+        isCorrect: 0
+      - answerText: "Xiyar, bad\u0131mcan"
+        isCorrect: 1
     - questionText: "Hilidim, ha hilidim,NEWLINEK\u0259sil\u0259r dilim-dilim,NEWLINEBir
         k\u0259ndi, q\u0131rx kilidim."
-      answers: []
+      answers:
+      - answerText: "Qarp\u0131z"
+        isCorrect: 1
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: Qoz
+        isCorrect: 0
     - questionText: "\xC7at\u0131 su i\xE7\u0259r, dana k\xF6p\u0259r."
-      answers: []
+      answers:
+      - answerText: "Balqabaq, qarp\u0131z"
+        isCorrect: 1
+      - answerText: "K\xF6k"
+        isCorrect: 0
+      - answerText: "Sar\u0131msaq"
+        isCorrect: 0
+      - answerText: Alma
+        isCorrect: 0
     - questionText: "\xC7\u0259p\u0259r \xFCst\u0259 \xE7al xoruz."
-      answers: []
+      answers:
+      - answerText: "Qara \u0259ncir"
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: "B\xF6y\xFCrtk\u0259n"
+        isCorrect: 0
+      - answerText: "Boran\u0131"
+        isCorrect: 1
     - questionText: "\xC7il toyuq, \xE7il\u0259m\u0259 toyuq,NEWLINEBa\u015F\u0131n\u0131
         k\u0259sdim qan\u0131 yox."
-      answers: []
+      answers:
+      - answerText: "K\xF6k"
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
+      - answerText: Nar
+        isCorrect: 0
+      - answerText: "So\u011Fan"
+        isCorrect: 1
     - questionText: "\xC7oxlu ta\u011F atar,NEWLINETorpaqda yatar,NEWLINEQoyma yeti\u015Fsin,NEWLINEKal-kal
         d\u0259r, apar."
-      answers: []
+      answers:
+      - answerText: "Z\u0259f\u0259ran"
+        isCorrect: 0
+      - answerText: "Lal\u0259"
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: Xiyar
+        isCorrect: 1
     - questionText: "A\u011F uzatd\u0131m,NEWLINEAl toxudum,NEWLINEQara s\u0259rdim."
-      answers: []
+      answers:
+      - answerText: "B\xF6y\xFCrtk\u0259n"
+        isCorrect: 1
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: Xurma
+        isCorrect: 0
+      - answerText: Banan
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda al yanaql\u0131 q\u0131z."
-      answers: []
+      answers:
+      - answerText: Alma
+        isCorrect: 1
+      - answerText: "Zo\u011Fal"
+        isCorrect: 0
+      - answerText: "Qara \u0259ncir"
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda bir torba un."
-      answers: []
+      answers:
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 1
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: Heyva
+        isCorrect: 0
+      - answerText: Nar
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda g\xF6z\xFC \xE7\u0131palaql\u0131
         qoca."
-      answers: []
+      answers:
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: Heyva
+        isCorrect: 0
+      - answerText: "\u018Fzgil"
+        isCorrect: 1
+      - answerText: "\u0130nnab"
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda qara yumaq."
-      answers: []
+      answers:
+      - answerText: Xurma
+        isCorrect: 0
+      - answerText: "B\xF6y\xFCrtk\u0259n"
+        isCorrect: 1
+      - answerText: "Qara \u0259ncir"
+        isCorrect: 0
+      - answerText: Qoz
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda q\u0131rm\u0131z\u0131 q\u0131z."
-      answers: []
+      answers:
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: "Zo\u011Fal"
+        isCorrect: 1
+      - answerText: Heyva
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda q\u0131rm\u0131z\u0131 yumaq."
-      answers: []
+      answers:
+      - answerText: "Zo\u011Fal"
+        isCorrect: 0
+      - answerText: Alma
+        isCorrect: 1
+      - answerText: "\xC7u\u011Fundur"
+        isCorrect: 0
+      - answerText: "K\xF6k"
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda dar\u0131 quyusu,NEWLINEDa\u011Farc\u0131qd\u0131,
         s\xF6z\xFCn do\u011Frusu."
-      answers: []
+      answers:
+      - answerText: "So\u011Fan"
+        isCorrect: 0
+      - answerText: "\u018Fncir"
+        isCorrect: 1
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: Heyva
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda z\u0131\u011Fl\u0131 da\u011Farc\u0131q."
-      answers: []
-    - questionText: "A\u011Fac ba\u015F\u0131nda q\u0131mro bit\u0259r. CHECK \u0130T
-        F\u0130RST"
-      answers: []
+      answers:
+      - answerText: "\u0130nnab"
+        isCorrect: 0
+      - answerText: "\u018Fzgil"
+        isCorrect: 1
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 0
+      - answerText: Xurma
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda sar\u0131 yemi\u015F."
-      answers: []
+      answers:
+      - answerText: Xurma
+        isCorrect: 1
+      - answerText: Nar
+        isCorrect: 0
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: Qoz
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda sar\u0131 yumaqNEWLINE\xDCst\xFCn\u0259
         s\u0259pilib a\u011F sumaq."
-      answers: []
+      answers:
+      - answerText: Xurma
+        isCorrect: 0
+      - answerText: Heyva
+        isCorrect: 1
+      - answerText: "\u015Eabal\u0131d"
+        isCorrect: 0
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda t\xFCkl\xFC yumaq,NEWLINEBir \xFCz\xFC
         a\u011F, o biri sar\u0131mt\u0131raq."
-      answers: []
+      answers:
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: Xurma
+        isCorrect: 0
+      - answerText: "\u015Eaftal\u0131"
+        isCorrect: 1
+      - answerText: Qoz
+        isCorrect: 0
     - questionText: "A\u011Fac ba\u015F\u0131nda unlu da\u011Farc\u0131q."
-      answers: []
+      answers:
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: "\u0130nnab"
+        isCorrect: 0
+      - answerText: "P\xFCst\u0259"
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 1
     - questionText: "A\u011Fac ba\u015F\u0131nda hovuz,NEWLINEOnu tapmayan donuz."
-      answers: []
+      answers:
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: "Zo\u011Fal"
+        isCorrect: 0
+      - answerText: Xurma
+        isCorrect: 0
+      - answerText: "\u018Fzgil"
+        isCorrect: 1
     - questionText: "A\u011Fz\u0131 ba\u011Fl\u0131 bir t\u0259ndirim var,NEWLINE\u0130\xE7i
         birc\u0259 k\xFCnd\u0259 tutar."
-      answers: []
+      answers:
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: "\u015Eabal\u0131d"
+        isCorrect: 0
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 1
+      - answerText: "\u0130nnab"
+        isCorrect: 0
     - questionText: "A m\u0259nim, al yast\u0131\u011F\u0131m,NEWLINE\u0130\xE7in\u0259
         un basd\u0131\u011F\u0131m."
-      answers: []
+      answers:
+      - answerText: Qoz
+        isCorrect: 0
+      - answerText: "\u0130yd\u0259"
+        isCorrect: 1
+      - answerText: "F\u0131nd\u0131q"
+        isCorrect: 0
+      - answerText: "B\xF6y\xFCrtk\u0259n"
+        isCorrect: 0
     - questionText: "Al g\u0259lir Ay\u0131standan,NEWLINEG\xFCl g\u0259lir G\xFCl\xFCstandanNEWLINEBir
         \u015Famama tapm\u0131\u015FamNEWLINEBir ilin bostan\u0131ndan."
-      answers: []
+      answers:
+      - answerText: Heyva
+        isCorrect: 1
+      - answerText: Alma
+        isCorrect: 0
+      - answerText: Armud
+        isCorrect: 0
+      - answerText: "Qara \u0259ncir"
+        isCorrect: 0
     - questionText: "Ald\u0131m bir d\u0259n\u0259,NEWLINEA\xE7d\u0131m min d\u0259n\u0259."
-      answers: []
+      answers:
+      - answerText: Nar
+        isCorrect: 1
+      - answerText: Qoz
+        isCorrect: 0
+      - answerText: Xurma
+        isCorrect: 0
+      - answerText: "Qarp\u0131z"
+        isCorrect: 0
     - questionText: "Alt\u0131 d\u0259ri, \xFCst\xFC d\u0259ri,NEWLINE\u0130\xE7ind\u0259
         bir ovuc dar\u0131."
-      answers: []
+      answers:
+      - answerText: Badam
+        isCorrect: 0
+      - answerText: "\xC7iy\u0259l\u0259k"
+        isCorrect: 0
+      - answerText: "\u018Fncir"
+        isCorrect: 1
+      - answerText: "\u015Eaftal\u0131"
+        isCorrect: 0
     - questionText: "Alt\u0131 taxta,NEWLINE\xDCst\xFC taxtaNEWLINE\u0130\xE7ind\u0259
         ya\u015F\u0131l paxla."
       answers: []

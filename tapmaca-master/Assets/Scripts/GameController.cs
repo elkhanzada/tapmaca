@@ -44,6 +44,10 @@ public class GameController : MonoBehaviour {
         {
             forStories = currentRoundData.questions.Length;
         }
+        else if (MenuSceneController.questionSelected == 1)
+        {
+            forStories = 100;
+        }
         else
         {
             forStories = 50;
