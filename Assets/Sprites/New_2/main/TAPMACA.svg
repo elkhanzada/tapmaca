@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="229" height="74" viewBox="0 0 229 74">
+  <defs>
+    <filter id="TAPMACA" x="0" y="0" width="229" height="74" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.478"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#TAPMACA)">
+    <text id="TAPMACA-2" data-name="TAPMACA" transform="translate(9 6)" fill="#fff" font-size="40" font-family="ComicSansMS, Comic Sans MS"><tspan x="0" y="44">TAPMACA</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="35" viewBox="0 0 36 35">
+  <g id="Group_7" data-name="Group 7" transform="translate(-70 -332)">
+    <g id="Rectangle_22" data-name="Rectangle 22" transform="translate(70 332)" fill="#556bf4" stroke="#707070" stroke-width="1">
+      <rect width="36" height="35" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="35" height="34" rx="4.5" fill="none"/>
+    </g>
+    <text id="A" transform="translate(82 340)" fill="#fff" font-size="15" font-family="CenturyGothic-Bold, Century Gothic" font-weight="700"><tspan x="0" y="15">A</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="264" height="260" viewBox="0 0 264 260">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="264" height="260" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_1" data-name="Repeat Grid 1" clip-path="url(#clip-path)">
+    <g transform="translate(-54 -347)">
+      <g id="Rectangle_19" data-name="Rectangle 19" transform="translate(54 347)" fill="#fff" stroke="#707070" stroke-width="0.5">
+        <rect width="252" height="52" rx="20" stroke="none"/>
+        <rect x="0.25" y="0.25" width="251.5" height="51.5" rx="19.75" fill="none"/>
+      </g>
+    </g>
+    <g transform="translate(-54 -282)">
+      <g id="Rectangle_19-2" data-name="Rectangle 19" transform="translate(54 347)" fill="#fff" stroke="#707070" stroke-width="0.5">
+        <rect width="252" height="52" rx="20" stroke="none"/>
+        <rect x="0.25" y="0.25" width="251.5" height="51.5" rx="19.75" fill="none"/>
+      </g>
+    </g>
+    <g transform="translate(-54 -217)">
+      <g id="Rectangle_19-3" data-name="Rectangle 19" transform="translate(54 347)" fill="#fff" stroke="#707070" stroke-width="0.5">
+        <rect width="252" height="52" rx="20" stroke="none"/>
+        <rect x="0.25" y="0.25" width="251.5" height="51.5" rx="19.75" fill="none"/>
+      </g>
+    </g>
+    <g transform="translate(-54 -152)">
+      <g id="Rectangle_19-4" data-name="Rectangle 19" transform="translate(54 347)" fill="#fff" stroke="#707070" stroke-width="0.5">
+        <rect width="252" height="52" rx="20" stroke="none"/>
+        <rect x="0.25" y="0.25" width="251.5" height="51.5" rx="19.75" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
