@@ -46,34 +46,30 @@ public class GameController : MonoBehaviour {
         currentRoundData = dataController.GetCurrentRoundData(MenuSceneController.questionSelected);
         currentWrongData = dataController.GetCurrentWrongData(MenuSceneController.questionSelected);
         questionPool = currentRoundData.questions;
-        switch (MenuSceneController.questionSelected)
+      /*  switch (MenuSceneController.questionSelected)
         {
             case 0:
-                forStories = currentRoundData.questions.Length;
                 bgDisplay.GetComponent<Image>().color = Color.green;
                 answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.green;
                 break;
             case 1:
-                forStories = 100;
                 bgDisplay.GetComponent<Image>().color = Color.yellow;
                 answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.yellow;
                 break;
             case 2:
-                forStories = 50;
                 bgDisplay.GetComponent<Image>().color = Color.cyan;
                 answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.cyan;
                 break;
             case 3:
-                forStories = 50;
                 bgDisplay.GetComponent<Image>().color = Color.red;
                 answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.cyan;
                 break;
             case 4:
-                forStories = currentRoundData.questions.Length;
                 bgDisplay.GetComponent<Image>().color = Color.black;
                 answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.black;
                 break;
-        }
+        }*/
+        forStories = currentRoundData.questions.Length;
         if (PlayerPrefs.GetInt("Music") == 0)
         {
             musicButton.image.sprite = forMusicButtonOff;
@@ -127,7 +123,7 @@ public class GameController : MonoBehaviour {
             else
             {
                 int incorrectIndex = Random.Range(0, currentWrongData.Count);
-                while (wrongAnswersForSpecificQuestion.Exists(x => x.answerText == currentWrongData[incorrectIndex].answerText))
+                while (wrongAnswersForSpecificQuestion.Exists(x => x.answerText[0] == currentWrongData[incorrectIndex].answerText[0]))
                     incorrectIndex = Random.Range(0, currentWrongData.Count);
                 answerButton.Setup(currentWrongData[incorrectIndex]);
                 wrongAnswersForSpecificQuestion.Add(currentWrongData[incorrectIndex]);

@@ -29,18 +29,18 @@ public class DataController : MonoBehaviour {
 
         /*for (int i = 0; i < allRoundData.Length; i++)
         {
-            StreamWriter writer = new StreamWriter("Topic"+i+".json", true);
+            StreamWriter writer = new StreamWriter(allRoundData[i].name+".json", true);
             string sjson = JsonUtility.ToJson(allRoundData[i]);
             writer.WriteLine(sjson);
             writer.Close();
-        }*/
+        }*/ 
         for (int i = 0; i<allRoundData.Length; i++)
         {
             List<AnswerData> one = new List<AnswerData>();
             for (int j = 0; j<allRoundData[i].questions.Length; j++)
             {
-                /*if (allRoundData[i].questions[j].answers[0].answerText == "" || allRoundData[i].questions[j].answers[0].isCorrect == false)
-                    print("Something at " + allRoundData[i].questions[j].questionText + "Index "+ i); */
+              //  if (allRoundData[i].questions[j].answers[0].answerText == "" || allRoundData[i].questions[j].answers[0].isCorrect == false)
+                //    print("Something at " + allRoundData[i].questions[j].questionText + "Index "+ i); 
                     if (allRoundData[i].questions[j].answers[0].answerText != "" &&
                         !one.Exists(x => x.answerText == allRoundData[i].questions[j].answers[0].answerText))
                     {

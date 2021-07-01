@@ -9,6 +9,8 @@ public class AnswerButton : MonoBehaviour {
     public AudioClip yes;
     public AudioClip no;
     public GameObject img;
+    public Sprite greenSprite;
+    public Sprite redSprite;
     private AnswerData answerData;
     private static int checkIfOneClicked = 0;
     private GameController gameController;
@@ -33,7 +35,9 @@ public class AnswerButton : MonoBehaviour {
         {
             if (answerData.isCorrect)
             {
-                gameObject.GetComponent<Image>().color = Color.green;
+                gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = greenSprite;
+                gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().color = new Color(1,1,1,1);
+                gameObject.transform.GetChild(1).GetComponent<Text>().color = Color.black;
                 if (PlayerPrefs.HasKey("Music"))
                 {
                     if (PlayerPrefs.GetInt("Music") == 1)
@@ -52,8 +56,12 @@ public class AnswerButton : MonoBehaviour {
 
             else
             {
-                gameObject.GetComponent<Image>().color = Color.red;
-                correct.gameObject.GetComponent<Image>().color = Color.green;
+                gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = redSprite;
+                gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().color = new Color(1, 1, 1, 1);
+                gameObject.transform.GetChild(1).GetComponent<Text>().color = Color.black;
+                correct.gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().color = new Color(1,1,1,1);
+                correct.gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = greenSprite;
+                correct.gameObject.transform.GetChild(1).GetComponent<Text>().color = Color.black; 
                 if (PlayerPrefs.HasKey("Music"))
                 {
                     if (PlayerPrefs.GetInt("Music") == 1)
@@ -75,8 +83,11 @@ public class AnswerButton : MonoBehaviour {
     }
     private void ToWhite()
     {
-        gameObject.GetComponent<Image>().color = Color.white;
-        correct.gameObject.GetComponent<Image>().color = Color.white;
+        Color32 myColor = new Color32(55, 233, 187,255);
+        gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().color = new Color(0,0,0,0);
+        gameObject.transform.GetChild(1).GetComponent<Text>().color = myColor;
+        correct.gameObject.GetComponent<Unity.VectorGraphics.SVGImage>().color = new Color(0, 0, 0, 0);
+        correct.gameObject.transform.GetChild(1).GetComponent<Text>().color = myColor;
     }
     private void WorkonButton()
     {

@@ -13,7 +13,7 @@ public class MenuSceneController : MonoBehaviour {
     PlayerProgress playerProgress;
     public Sprite forMusicButtonOn;
     public Sprite forMusicButtonOff;
-    public  Button musicButton;
+    public  GameObject musicButton;
     private static int isOn = 1;
     
     private void Start()
@@ -28,7 +28,7 @@ public class MenuSceneController : MonoBehaviour {
             {
                 if (PlayerPrefs.GetInt("Music") == 0)
                 {
-                    musicButton.image.sprite = forMusicButtonOff;
+                    musicButton.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = forMusicButtonOff;
                     AudioManager.playingSound = false;
 
                 }
@@ -38,7 +38,7 @@ public class MenuSceneController : MonoBehaviour {
                     {
                         audio.GetComponent<AudioSource>().Play();
                         AudioManager.playingSound = false;
-                        musicButton.image.sprite = forMusicButtonOn;
+                        musicButton.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = forMusicButtonOn;
                     }
                 }
             }
@@ -99,12 +99,12 @@ public class MenuSceneController : MonoBehaviour {
                 else {
                     audio.GetComponent<AudioSource>().UnPause();
                 }
-                musicButton.image.sprite = forMusicButtonOn; 
+                musicButton.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = forMusicButtonOn; 
                 PlayerPrefs.SetInt("Music", 1);
             }
             else
             {
-                musicButton.image.sprite = forMusicButtonOff;
+                musicButton.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = forMusicButtonOff;
                 audio.GetComponent<AudioSource>().Pause();
                 PlayerPrefs.SetInt("Music", 0);
             }
@@ -115,7 +115,7 @@ public class MenuSceneController : MonoBehaviour {
             
                 isOn = 0;
                 PlayerPrefs.SetInt("Music", isOn);
-                musicButton.image.sprite = forMusicButtonOff;
+                musicButton.GetComponent<Unity.VectorGraphics.SVGImage>().sprite = forMusicButtonOff;
                 audio.GetComponent<AudioSource>().Pause();
             
           

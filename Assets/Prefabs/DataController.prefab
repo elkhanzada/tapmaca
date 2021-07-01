@@ -135,7 +135,7 @@ MonoBehaviour:
       answers:
       - answerText: "K\xFCl\u0259k"
         isCorrect: 1
-    - questionText: "Babam\u0131n bir donu var,NEWLINE Qatlay\u0131ram, qat g\xF6t\xFCrm\xFCr."
+    - questionText: "Babam\u0131n bir donu var,NEWLINEQatlay\u0131ram, qat g\xF6t\xFCrm\xFCr."
       answers:
       - answerText: Yer
         isCorrect: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
     - questionText: "Dam damb\u0131ldar,NEWLINESu gumbuldar [\u015Fapp\u0131ldar],NEWLINEHeyva
         \xE7alar,NEWLINENar oynuyar."
       answers:
-      - answerText: "G\xF6y gurulltusu, dolu"
+      - answerText: "G\xF6y gurultusu, dolu"
         isCorrect: 1
     - questionText: "Dam \xFCst\u0259 daylaq oynar,NEWLINEYer\u0259 d\u0259yib oyular."
       answers:
@@ -1026,10 +1026,6 @@ MonoBehaviour:
       answers:
       - answerText: Limon
         isCorrect: 1
-    - questionText: "Sar\u0131-sar\u0131 sand\u0131qlar,NEWLINE\u0130\xE7i dolu f\u0131nd\u0131qlar."
-      answers:
-      - answerText: "Xa\u015F-xa\u015F"
-        isCorrect: 1
     - questionText: "Tabaq qabaq i\xE7ind\u0259,NEWLINES\xFCbh\xFC sabah i\xE7ind\u0259,NEWLINEDayan\u0131b
         ayaq \xFCst\u0259,NEWLINE\u018Ftri d\u0259 var i\xE7ind\u0259."
       answers:
@@ -1081,8 +1077,9 @@ MonoBehaviour:
       answers:
       - answerText: "S\xF6y\xFCd"
         isCorrect: 1
-    - questionText: "In\u0259yim var, e\u015Fikd\u0259di,NEWLINEAy\u0131, ili e\u015Fikd\u0259di,NEWLINE\u0130ld\u0259
-        bir k\u0259r\u0259 sa\u011F\u0131lar,NEWLINE\xD6z\xFC yen\u0259 e\u015Fikd\u0259di."
+    - questionText: "\u0130n\u0259yim var, e\u015Fikd\u0259di,NEWLINEAy\u0131, ili
+        e\u015Fikd\u0259di,NEWLINE\u0130ld\u0259 bir k\u0259r\u0259 sa\u011F\u0131lar,NEWLINE\xD6z\xFC
+        yen\u0259 e\u015Fikd\u0259di."
       answers:
       - answerText: "Ba\u011F"
         isCorrect: 1
@@ -1187,7 +1184,7 @@ MonoBehaviour:
         isCorrect: 1
     - questionText: "Qutu-qutu i\xE7ind\u0259,NEWLINEQutunun lap i\xE7ind\u0259,NEWLINEG\xF6z\u0259l
         bir \u0259l yayl\u0131\u011F\u0131 (n\u0259n\u0259min \u0259l yayl\u0131\u011F\u0131),NEWLINEO
-        da qutu i\xE7inde."
+        da qutu i\xE7ind\u0259."
       answers:
       - answerText: "K\u0259l\u0259m"
         isCorrect: 1
@@ -1469,7 +1466,7 @@ MonoBehaviour:
       - answerText: Qoz
         isCorrect: 1
     - questionText: "Qahqah qalas\u0131 var bunun,NEWLINEQan piyalas\u0131 var bunun,NEWLINEN\u0259
-        do\u011Fur,NEWLINEn\u0259 t\xF6r\u0259yir,NEWLINEP\u0259rvaz balas\u0131
+        do\u011Fur,NEWLINEN\u0259 t\xF6r\u0259yir,NEWLINEP\u0259rvaz balas\u0131
         var bunun."
       answers:
       - answerText: "\xC7iy\u0259l\u0259k"
@@ -1561,7 +1558,8 @@ MonoBehaviour:
       answers:
       - answerText: Nar
         isCorrect: 1
-    - questionText: "G\xF6ydon bir d\u0259ri d\xFC\u015Fd\xFC,NEWLINEToyuq ona y\xFCr\xFC\u015Fd\xFC."
+    - questionText: "G\xF6yd\u0259n bir d\u0259ri d\xFC\u015Fd\xFC,NEWLINEToyuq ona
+        y\xFCr\xFC\u015Fd\xFC."
       answers:
       - answerText: Tut
         isCorrect: 1
@@ -1686,8 +1684,8 @@ MonoBehaviour:
       answers:
       - answerText: Nar
         isCorrect: 1
-    - questionText: "Heyva ki\u0131\u0131\u0131i sapsar\u0131,NEWLINEN\u0259 heyvad\u0131,
-        n\u0259 dar\u0131.NEWLINEBir a\u011Facdan d\u0259r\u0259r\u0259m,NEWLINEL\u0259zz\u0259tini
+    - questionText: "Heyva kimi sapsar\u0131,NEWLINEN\u0259 heyvad\u0131, n\u0259
+        dar\u0131.NEWLINEBir a\u011Facdan d\u0259r\u0259r\u0259m,NEWLINEL\u0259zz\u0259tini
         g\xF6r\u0259r\u0259m."
       answers:
       - answerText: Armud
@@ -2520,7 +2518,7 @@ MonoBehaviour:
       answers:
       - answerText: Qoyun
         isCorrect: 1
-    - questionText: "\xDCst\xFC pulcuq, \u0130\xE7i q\u0131lc\u0131q."
+    - questionText: "\xDCst\xFC pulcuq,NEWLINE\u0130\xE7i q\u0131lc\u0131q."
       answers:
       - answerText: "Bal\u0131q"
         isCorrect: 1
@@ -2595,7 +2593,7 @@ MonoBehaviour:
       - answerText: "Qaranqu\u015F"
         isCorrect: 1
     - questionText: "Ba\u015F\u0131 daraq, quyru\u011Fu oraq,NEWLINETezd\u0259n durar,
-        surun vurar.CHECK"
+        surun vurar."
       answers:
       - answerText: Xoruz
         isCorrect: 1
@@ -3128,8 +3126,8 @@ MonoBehaviour:
       - answerText: "K\u0259p\u0259n\u0259k"
         isCorrect: 1
     - questionText: "Sar\u0131d\u0131, z\u0259f\u0259ran deyil,NEWLINEQanadl\u0131d\u0131,
-        qu\u015F deyil.NEWLINEYediyi g\xFCl-\xE7i\xE7\u0259kdi, N\u0259cisi \xE7ox
-        g\xF6y\xE7\u0259kdi."
+        qu\u015F deyil.NEWLINEYediyi g\xFCl-\xE7i\xE7\u0259kdi,NEWLINEN\u0259cisi
+        \xE7ox g\xF6y\xE7\u0259kdi."
       answers:
       - answerText: "Ar\u0131"
         isCorrect: 1
@@ -3399,7 +3397,7 @@ MonoBehaviour:
       answers:
       - answerText: "S\xFCtun"
         isCorrect: 1
-    - questionText: "Qara toyuq qaq el\u0259di,NEWLINEQanadlar\u0131 taqq el\u0259di."
+    - questionText: "Qara toyuq qaqq el\u0259di,NEWLINEQanadlar\u0131 taqq el\u0259di."
       answers:
       - answerText: "Qap\u0131"
         isCorrect: 1
@@ -3726,7 +3724,7 @@ MonoBehaviour:
       - answerText: "Par\xE7"
         isCorrect: 1
     - questionText: "Bizim evd\u0259 bir quyu var,NEWLINE\u0130\xE7ind\u0259 s\u0259rin
-        suyu var,NEWLINESuyu i\xE7ilm\u0259z,NEWLINEBar\u0131 bi\xE7ilmoz."
+        suyu var,NEWLINESuyu i\xE7ilm\u0259z,NEWLINEBar\u0131 bi\xE7ilm\u0259z."
       answers:
       - answerText: Lampa
         isCorrect: 1
@@ -3841,11 +3839,6 @@ MonoBehaviour:
     - questionText: "Bir \xF6k\xFCz\xFCm var, quyru\u011Fundan tutmasan, dama girm\u0259z."
       answers:
       - answerText: "Qa\u015F\u0131q"
-        isCorrect: 1
-    - questionText: "Bir pad\u015Fah\u0131n be\u015F o\u011Flu var, be\u015Fi d\u0259
-        bir ya\u015Fda, bir bi\xE7imd\u0259, be\u015Fi d\u0259 eyni pe\u015F\u0259d\u0259."
-      answers:
-      - answerText: "Corab s\xFCl\xFCs\xFC"
         isCorrect: 1
     - questionText: "Bir toyu\u011Fum var,NEWLINES\xFCz\u0259r-s\xFCz\u0259rNEWLINEYumurta
         t\xF6k\u0259r."
@@ -4045,7 +4038,7 @@ MonoBehaviour:
       answers:
       - answerText: "\xDCsk\xFCk"
         isCorrect: 1
-    - questionText: "Z\u0259ng z\u0259ng i\xE7ind\u0259,NEWLINEZ\u0259ng f\u0131r\u0259ng
+    - questionText: "Z\u0259ng z\u0259ng i\xE7ind\u0259,NEWLINEZ\u0259ng fir\u0259ng
         i\xE7ind\u0259,NEWLINEOn iki ay f\u0131r\u0259ng i\xE7ind\u0259."
       answers:
       - answerText: Saat
@@ -4181,7 +4174,7 @@ MonoBehaviour:
       - answerText: "T\u0259ndir"
         isCorrect: 1
     - questionText: "O yan\u0131 yast\u0131, Bu yan\u0131 yast\u0131,NEWLINED\xF6rd
-        aya\u011Fm\u0131,NEWLINEYer\u0259 n\u0259 basd\u0131.CHECK"
+        ayaql\u0131,NEWLINEYer\u0259 n\u0259 basd\u0131."
       answers:
       - answerText: Stol
         isCorrect: 1
@@ -4321,7 +4314,7 @@ MonoBehaviour:
       answers:
       - answerText: "Diyirc\u0259k"
         isCorrect: 1
-    - questionText: "Faytonum var, birt\u0259k\u0259rli,NEWLINE Non\u0259m s\xFCr\u0259r
+    - questionText: "Faytonum var, birt\u0259k\u0259rli,NEWLINEN\u0259n\u0259m s\xFCr\u0259r
         t\u0259k, bir\u0259lli.NEWLINEN\u0259 izi var, n\u0259 tozu var,NEWLINEYupyumru
         yumurtlayar."
       answers:
@@ -4404,7 +4397,7 @@ MonoBehaviour:
       answers:
       - answerText: Sac
         isCorrect: 1
-    - questionText: "\u015E\u0259kli i\u015F\u0131qdan,NEWLINEIpi var m\u0131xdan."
+    - questionText: "\u015E\u0259kli i\u015F\u0131qdan,NEWLINE\u0130pi var m\u0131xdan."
       answers:
       - answerText: "G\xFCzg\xFC"
         isCorrect: 1
@@ -4687,7 +4680,7 @@ MonoBehaviour:
       answers:
       - answerText: Taxta
         isCorrect: 1
-    - questionText: "M\u0259n a\u015Fiq, i\xE7i d\u0259ri, \u0130\xE7inin i\xE7i
+    - questionText: "M\u0259n a\u015Fiq, i\xE7i d\u0259ri,NEWLINE\u0130\xE7inin i\xE7i
         d\u0259ri,NEWLINEA\u015F\u0131q bir loxma yeyib,NEWLINE\xDCz\xFC \u0259t,
         i\xE7i d\u0259ri."
       answers:
