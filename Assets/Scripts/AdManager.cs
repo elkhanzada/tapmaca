@@ -15,7 +15,7 @@ public class AdManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 #if UNITY_EDITOR
 #elif UNITY_ANDROID
-    RequestInterstitial();    
+  //  RequestInterstitial();    
 
 #endif
 
@@ -23,9 +23,9 @@ public class AdManager : MonoBehaviour
     public void RequestInterstitial(){
 #if UNITY_EDITOR
 #elif UNITY_ANDROID
-		interstital = new InterstitialAd(videoId);
-		AdRequest request = new AdRequest.Builder().Build();
-        interstital.LoadAd(request);
+	//	interstital = new InterstitialAd(videoId);
+	//	AdRequest request = new AdRequest.Builder().Build();
+    //    interstital.LoadAd(request);
 #endif
     }
 
@@ -33,10 +33,10 @@ public class AdManager : MonoBehaviour
     {
 #if UNITY_EDITOR
 #elif UNITY_ANDROID
-        if (interstital.IsLoaded())
-        {
-            interstital.Show();
-        }
+     //   if (interstital.IsLoaded())
+    //   {
+    //        interstital.Show();
+    //    }
 #endif
 
 

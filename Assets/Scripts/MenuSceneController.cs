@@ -21,7 +21,7 @@ public class MenuSceneController : MonoBehaviour {
 		
 		AdManager.Instance.ShowVideo();
   
-        audio = GameObject.FindObjectOfType<AudioManager>();
+        audio = FindObjectOfType<AudioManager>();
         if (PlayerPrefs.HasKey("Music"))
         {
             if (musicButton)

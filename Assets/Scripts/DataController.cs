@@ -27,20 +27,16 @@ public class DataController : MonoBehaviour {
        
         DontDestroyOnLoad(gameObject);
 
-        /*for (int i = 0; i < allRoundData.Length; i++)
-        {
-            StreamWriter writer = new StreamWriter(allRoundData[i].name+".json", true);
-            string sjson = JsonUtility.ToJson(allRoundData[i]);
-            writer.WriteLine(sjson);
-            writer.Close();
-        }*/ 
+        //extractData(allRoundData);
+        
+
         for (int i = 0; i<allRoundData.Length; i++)
         {
             List<AnswerData> one = new List<AnswerData>();
             for (int j = 0; j<allRoundData[i].questions.Length; j++)
             {
-              //  if (allRoundData[i].questions[j].answers[0].answerText == "" || allRoundData[i].questions[j].answers[0].isCorrect == false)
-                //    print("Something at " + allRoundData[i].questions[j].questionText + "Index "+ i); 
+                //if (allRoundData[i].questions[j].answers[0].answerText == "" || allRoundData[i].questions[j].answers[0].isCorrect == false)
+                  //  print("Something at " + allRoundData[i].questions[j].questionText + "Index "+ i); 
                     if (allRoundData[i].questions[j].answers[0].answerText != "" &&
                         !one.Exists(x => x.answerText == allRoundData[i].questions[j].answers[0].answerText))
                     {
@@ -54,11 +50,6 @@ public class DataController : MonoBehaviour {
                 wrongAnswers.Add(one);
         }
 
-        /*print(wrongAnswers[0].Count);
-        print(wrongAnswers[1].Count);
-        print(wrongAnswers[2].Count);
-        print(wrongAnswers[3].Count);
-        print(wrongAnswers[4].Count);*/
         audio = GameObject.FindObjectOfType<AudioManager>();
         if (PlayerPrefs.HasKey("Music"))
         {
@@ -135,4 +126,38 @@ public class DataController : MonoBehaviour {
 
         });
     }
+    private void extractData(RoundData[] data)
+    {
+
+        for (int i = 0; i < data.Length; i++)
+        {
+            if (File.Exists(data[i].name + ".json"))
+            {
+                File.Delete(data[i].name + ".json");
+            }
+            StreamWriter writer = new StreamWriter(data[i].name + ".json", true);
+            string sjson = JsonUtility.ToJson(data[i]);
+            writer.WriteLine(sjson);
+            writer.Close();
+        }
+        /*  if (File.Exists(data[i].name + "_debug.json"))
+          {
+              File.Delete(data[i].name + "_debug.json");
+          }
+        StreamWriter writer = new StreamWriter(data[i].name + "_debug.json", true);
+        QuestionData[] questions = data[i].questions;
+            for (int j = 0; j < questions.Length; j++)
+        {
+        string answer = questions[j].answers[0].answerText;
+        if (answer.Contains(" və ") || answer.Contains(","))
+        {
+          string sjson = JsonUtility.ToJson(questions[j]);
+          writer.WriteLine(sjson);
+        }
+        }
+        writer.Close();*/
+    }
+
+
+
 }

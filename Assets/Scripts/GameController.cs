@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
     public Text questionDisplayText;
     public Text scoreDisplayText;
+    public Text counterDisplayText;
     public SimpleObjectPool answerButtonObjectPool;
     public Transform answerButoonParent;
     public GameObject questionDisplay;
@@ -22,7 +23,8 @@ public class GameController : MonoBehaviour {
     public Sprite forMusicButtonOff;
     public GameObject settingsDisplay;
     public GameObject answerButton;
-    
+    public GameObject rewardButton;
+
     private DataController dataController;
     private QuestionData[] questionPool;
     private RoundData currentRoundData;
@@ -34,41 +36,20 @@ public class GameController : MonoBehaviour {
     private List<GameObject> answerButtonGameObjects = new List<GameObject>();
     private List<QuestionData> questionsList;
     private int forStories;
+    private int counter;
     private AudioManager audio;
     private string[] abcd = { "A", "B", "C", "D" };
   
     
     void Start() {
-        Time.timeScale = 1;
         if (!audio)
-            audio = GameObject.FindObjectOfType<AudioManager>();
+            audio = FindObjectOfType<AudioManager>();
         dataController = FindObjectOfType<DataController>();
+        //rewardButton.GetComponent<RewardButton>().Initialize();
+        //rewardButton.GetComponent<RewardButton>().LoadAd();
         currentRoundData = dataController.GetCurrentRoundData(MenuSceneController.questionSelected);
         currentWrongData = dataController.GetCurrentWrongData(MenuSceneController.questionSelected);
         questionPool = currentRoundData.questions;
-      /*  switch (MenuSceneController.questionSelected)
-        {
-            case 0:
-                bgDisplay.GetComponent<Image>().color = Color.green;
-                answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.green;
-                break;
-            case 1:
-                bgDisplay.GetComponent<Image>().color = Color.yellow;
-                answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.yellow;
-                break;
-            case 2:
-                bgDisplay.GetComponent<Image>().color = Color.cyan;
-                answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.cyan;
-                break;
-            case 3:
-                bgDisplay.GetComponent<Image>().color = Color.red;
-                answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.cyan;
-                break;
-            case 4:
-                bgDisplay.GetComponent<Image>().color = Color.black;
-                answerButton.transform.GetChild(0).GetComponent<Image>().color = Color.black;
-                break;
-        }*/
         forStories = currentRoundData.questions.Length;
         if (PlayerPrefs.GetInt("Music") == 0)
         {
@@ -78,24 +59,27 @@ public class GameController : MonoBehaviour {
         {
             musicButton.image.sprite = forMusicButtonOn;
         }
-
-
+        Begin();
+	}
+    void Begin()
+    {
+        Time.timeScale = 1;
+        //UnityAdsManager.Instance.LoadAd();
+        counterDisplayText.text = "1" + "/" + forStories;
+        counter = 1;
         timeRemaining = 40f;
         UpdateTimeRemainingDisplay();
         questionIndex = Random.Range(0, forStories);
-        // yesno = GameObject.Find("TF");
         questionsList = new List<QuestionData>(questionPool);
         questionsList = questionsList.GetRange(0, forStories);
         //answeredQuestions.Add(questionIndex);
         playerScore = 0;
         isRoundActive = true;
+        //rewardButton.SetActive(true);
         ShowQuestion();
-        
-	}
+    }
     private void ShowQuestion()
     {
-        print(questionsList.Count);
-
         timeRemaining = 40f;
         RemoveAnswerButtons();
         QuestionData questionData = questionsList[questionIndex];
@@ -150,9 +134,9 @@ public class GameController : MonoBehaviour {
             playerScore += currentRoundData.pointsAddedForCorrectAnswer;
             scoreDisplayText.text = playerScore.ToString();
 
-
             questionsList.RemoveAt(questionIndex);
             forAnswerButtonClicked();
+            UpdateCounterText();
         }
         else
         {
@@ -162,33 +146,22 @@ public class GameController : MonoBehaviour {
       
         
         
-    } 
+    }
+    private void UpdateCounterText()
+    {
+        counter++;
+        counterDisplayText.text = counter + "/" + forStories;
+    }
     private void forAnswerButtonClicked()
     {
-        questionIndex = Random.Range(0, questionsList.Count);
-        if (questionsList.Count==0)
+        if (questionsList.Count == 0)
             EndRound();
         else
+        {
+            int cubic = questionsList.Count;
+            questionIndex = Random.Range(0, cubic * cubic * cubic)%cubic;
             ShowQuestion();
-        /*  else
-          {
-              while (true)
-              {
-                  if (!answeredQuestions.Contains(questionIndex))
-                  {
-                      answeredQuestions.Add(questionIndex);
-                      break;
-                  }
-                  else
-                  {
-                      questionIndex = Random.Range(0, forStories);
-
-                  }
-              }
-          */
-
-
-
+        }
     }
     public void EndRound()
     {
@@ -199,20 +172,30 @@ public class GameController : MonoBehaviour {
         highScoreDisplay.text = playerScore.ToString();//dataController.GetHighestPlayerScore().ToString();
         if (questionsList.Count==0) 
         {
+            //rewardButton.SetActive(false);
             END.SetActive(true);
-            print("yes");
         }
         else
         {
             END.SetActive(false);
         }
-      
-        AdManager.Instance.ShowVideo();
+        //UnityAdsManager.Instance.ShowAd();
+        //AdManager.Instance.ShowVideo();
     	
+    }
+    public void forRewardedUser()
+    {
+        questionIndex = Random.Range(0, forStories);
+        forAnswerButtonClicked();
+        ShowQuestion();
+        questionDisplay.SetActive(true);
+        roundOverDisplay.SetActive(false);
+        isRoundActive = true;
+        //rewardButton.SetActive(false);
     }
     public void Restart()
     {
-        Start();
+        Begin();
         scoreDisplayText.text = playerScore.ToString();
         roundOverDisplay.SetActive(false);
         pauseDisplay.SetActive(false);
@@ -226,8 +209,8 @@ public class GameController : MonoBehaviour {
         Time.timeScale = 0;
         pauseDisplay.SetActive(true);
 		
-        AdManager.Instance.ShowVideo();
-
+        //AdManager.Instance.ShowVideo();
+        //UnityAdsManager.Instance.ShowAd();
     }
 
     public void goToSettings(bool go)
@@ -236,12 +219,14 @@ public class GameController : MonoBehaviour {
         {
             Time.timeScale = 0;
             settingsDisplay.SetActive(true);
-            AdManager.Instance.ShowVideo();
+            //AdManager.Instance.ShowVideo();
+            //UnityAdsManager.Instance.ShowAd();
         }else
         {
             Time.timeScale = 1;
             settingsDisplay.SetActive(false);
-            AdManager.Instance.RequestInterstitial();
+            //AdManager.Instance.RequestInterstitial();
+            //UnityAdsManager.Instance.LoadAd();
         }
     }
     public void Continue()
@@ -251,7 +236,8 @@ public class GameController : MonoBehaviour {
         questionDisplay.SetActive(true);
         pauseDisplay.SetActive(false);
 
-		AdManager.Instance.RequestInterstitial();
+		//AdManager.Instance.RequestInterstitial();
+       // UnityAdsManager.Instance.LoadAd();
     }
     public void ReturnToMenu(bool isMenu)
     {
@@ -264,7 +250,7 @@ public class GameController : MonoBehaviour {
         {
             SceneManager.LoadScene("QuestionSelection");
         }
-		AdManager.Instance.RequestInterstitial();
+		//AdManager.Instance.RequestInterstitial();
     }
     private void UpdateTimeRemainingDisplay()
     {
@@ -336,13 +322,5 @@ public class GameController : MonoBehaviour {
                 SceneManager.LoadScene("QuestionSelection");
             }
         }
-       /* if (Input.GetButtonDown("Fire2"))
-        {
-            if (Time.timeScale == 0)
-            {
-                Time.timeScale = 1;
-            }
-            SceneManager.LoadScene("QuestionSelection");
-        }*/
 	}
 }

@@ -30,7 +30,6 @@ public class AnswerButton : MonoBehaviour {
     public void HandleClick()
     {
         checkIfOneClicked++;
-        print(checkIfOneClicked);
         if (checkIfOneClicked == 1)
         {
             if (answerData.isCorrect)
